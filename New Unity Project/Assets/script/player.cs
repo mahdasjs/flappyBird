@@ -7,7 +7,6 @@ public class player : MonoBehaviour
 {
     [Range(0f, 0.1f)] public float jumpAmount;
     public Rigidbody2D rb;
-    public GameObject pause;
     public int count = 0;
     public bool flag = false;
     public bool flag1 = false;
@@ -57,10 +56,11 @@ public class player : MonoBehaviour
             SceneManager.LoadScene("game over");
 
         }
-        if (collision.gameObject.tag == "score" &&flag)
+        if (collision.gameObject.tag == "score" )
         {
             score.scoreAmount += 1;
-            Debug.Log(score.scoreAmount);
+            Debug.Log(bestScore);
+
         }
     }
 
